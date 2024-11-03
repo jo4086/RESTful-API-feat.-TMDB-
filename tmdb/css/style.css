@@ -100,6 +100,7 @@ header button.navbar-toggler {
 
 main .container {
    padding: 40px 0;
+   position: re                                                                                                                      ;
 }
 
 main .container .movie-detail > ul.movie-info,
@@ -117,9 +118,11 @@ main .container ul.movie-info li {
 
 main .container .row .card {
    height: 100%;
+   user-select: none;
 }
 main .container .row .card a {
    height: 85%;
+   background-color: #e6e6e6;
 }
 main .container .row .card img {
    height: 100%;

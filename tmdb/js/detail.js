@@ -66,13 +66,15 @@ const getDetailMovie = async (movieDetailUrl) => {
       const data = await response.json()
       console.log(data)
 
+      let posterImg = !data.poster_path ? `./images/No_poster.png` : `https://image.tmdb.org/t/p/w300${data.poster_path}`
+
       // ▼ [w300] : poster의 width를 300으로 지정
-      const imgSrc = `https://image.tmdb.org/t/p/w300${data.poster_path}`
+      const imgSrc = `${posterImg}`
 
       const rowHtml = `
          <div class="Poster row">
             <div class="poster col-sm-3" style="text-align:center">
-               <img src="${imgSrc}" alt="${data.title}" class="poster-detail" style="max-width:100%" />
+               <img src="${imgSrc}" alt="${data.title}" class="poster-detail" style="max-width:100%; background-color:#e6e6e6;" />
             </div>
             <div class="col-sm-9 movie-datail">
                <h2>${data.title}</h2>
@@ -110,7 +112,6 @@ const getCreditsMovie = async (movieCreditsUrl) => {
       for (let i = 0; i < data.cast.length; i++) {
          if (i == 6) break
 
-
          let profileImg = !data.cast[i].profile_path ? `./images/person.png` : `https://image.tmdb.org/t/p/w200${data.cast[i].profile_path}`
 
          castRowHtml += `
@@ -123,9 +124,9 @@ const getCreditsMovie = async (movieCreditsUrl) => {
                 </div>
             </div>`
       }
-       castRowHtml += `</div>`
-       
-       mainContainer.innerHTML += castRowHtml
+      castRowHtml += `</div>`
+
+      mainContainer.innerHTML += castRowHtml
    } catch (error) {
       console.error('에러 발생:', error)
    }
