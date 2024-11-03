@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+/* 초기화 CSS 속성 */
+
+body {
+   /* 1점 */
+   margin: 0;
+   padding: 0;
+   font-size: 0.9em;
+}
+
+ul {
+   /* 1점 */
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+a {
+   /* 1점 */
+   color: black;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+p {
+   /* 1점 */
+   margin: 0;
+}
+
+/* ■■■■■■■■■■■■■■■■■■
+    <header> - start
+   ■■■■■■■■■■■■■■■■■■ */
+/* 상위 탭 기본색과 hover 색 */
+header .nav-link {
+   font-weight: bold !important;
+   color: rgb(201, 201, 201);
+}
+header .nav-link:hover {
+   color: white;
+}
+
+/* 돋보기 기본색과 hover 색 */
+header .nav-link i {
+   color: rgb(201, 201, 201);
+}
+header .nav-link:hover > i {
+   color: white;
+}
+/* 언어아이콘 기본색과 hover 색 */
+header .nav-link.active i {
+   color: #5699c3;
+}
+header .nav-link.active:hover > i {
+   color: #3cb4fe;
+}
+/* 상위탭 오버시 하위리스트 보이게 */
+header .nav-item:hover .nav-sub-item {
+   display: block;
+}
+/* 반응형 웹에서 메뉴버튼의 색과 크기 조정 */
+header button.navbar-toggler {
+   background-color: rgb(115, 155, 187);
+   color: transparent;
+   width: 46px;
+   height: 33px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 7px;
+}
+/* 네비 서브메뉴 */
+.nav-sub-item {
+   position: absolute;
+   top: 53px;
+   background-color: #ffffff;
+   z-index: 1000;
+   border-radius: 5px;
+   display: none;
+}
+.nav-sub-item li {
+   padding: 4px 15px;
+   width: 120px;
+}
+.nav-sub-item li:first-child {
+   padding-top: 10px;
+}
+.nav-sub-item li:last-child {
+   padding-bottom: 8px;
+}
+.nav-sub-item li a {
+   font-size: 0.9em;
+}
+
+/* main 시작 */
+main .container {
+   background-color: yellowgreen;
+   box-sizing: border-box;
+   overflow: hidden;
+   padding: 0;
+}
+main .container .cardbox .slide_card img {
+   height: 100%;
+   width: 100%;
+   border-radius: 4px;
+   object-fit: cover;
+}
+main .container .cardbox .slide_card {
+   border-radius: 4px;
+   box-sizing: border-box;
+   width: 200px;
+   /* background-color: tan; */
+   border: 1px solid rgb(5, 45, 87);
+   margin: 0.5%;
+   height: 300px;
+}
+main .container .menu {
+   width: 100%;
+   background-color: white;
+   display: flex;
+   flex-direction: column;
+}
+main .container .menu h3 {
+   background-color: yellow;
+   line-height: 40px;
+   height: 40px;
+   padding-left: 30px;
+   /* font-weight: bold; */
+   font-size: 20px;
+   margin: 0;
+}
+/* main .container .menu .cardbox {
+   background-color: red;
+   width: 100%;
+   display: flex;
+   animation: slide 20s linear infinite;
+   animation-play-state: running;
+}
+@keyframes slide {
+   0% {
+      transform: translateX(0);
+   }
+   100% {
+      transform: translateX(-100%);
+   }
+} */

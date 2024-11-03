@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <style>
+        ul {
+            width: 130px;
+            padding: 0;
+            margin: 10px 0 0 0;
+            list-style: none
+        }
+        li {
+            width: 100%;
+            background-color: greenyellow;
+            /* border-bottom-left-radius: ; */
+        }
+      </style>
+   </head>
+   <body>
+      <div class="dropdown">
+         <div class="select_option">
+            <div class="select_arrow"></div>
+         </div>
+         <ul class="options">
+            <li class="option">인기도 내림차순</li>
+            <li class="option">인기도 오름차순</li>
+            <li class="option">평점 내림차순</li>
+            <li class="option">평점 오름차순</li>
+            <li class="option">첫 방송일 내림차순</li>
+            <li class="option">첫 방송일 오름차순</li>
+            <li class="option">이름(A-Z)</li>
+            <li class="option">이름(Z-A)</li>
+         </ul>
+      </div>
+
+      <script>
+         const update = document.querySelector('.select_option')
+         const options = document.querySelector('.options')
+         const option = document.querySelectorAll('.option')
+        update.innerHTML = option[0].innerText
+         update.addEventListener('click', function () {
+            options.classList.toggle('show')
+         })
+
+         option.forEach(function (option) {
+            option.addEventListener('click', function () {
+                update.innerHTML = this.innerText
+                options.classList.remove('show')
+            })
+         })
+
+        //  document.querySelector('.selected').addEventListener('click', function () {
+        //     document.querySelector('.options').classList.toggle('show')
+        //  })
+        //  document.querySelectorAll('.option').forEach(function (option) {
+        //     option.addEventListener('click', function () {
+        //        document.querySelector('.selected').innerText = this.innerText
+        //        document.querySelector('.options').classList.remove('show')
+        //     })
+        //  })
+      </script>
+   </body>
+</html>
